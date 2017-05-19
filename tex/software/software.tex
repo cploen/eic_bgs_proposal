@@ -1,0 +1,20 @@
+\subsection{GEMC}
+
+GEMC, short for Geant4 Monte Carlo, is the simulation software used by both CLAS12 and EIC to study how particles interact with matter.  It is capable of tracking particles through any material and recording interactions and detector response at every step.  Built in C++, the software permits users to build the elements of the experiment using either perl scripts or importing designs directly from CAD.  GEMC permits users to model a particle beam with great specificity.  One can specify the point of origin, particle species, momentum, and direction.  Additional options permit a spatial spread in $\theta$ and $\phi$ values, Gaussian beam profile, and bunch spacing. 
+
+Alternatively, users may import generated events for simulation using the LUND format.  Simulation data is recorded in EVIO format, short for Event Input/Output.  It is then written to a separate file which can be converted to ROOT for data analysis using a program called Evio2Root.
+
+\subsection{Event Generator}
+Based off nominal beam dynamics from the accelerator division, a Root script was written that accurately models these parameters.  It outputs data for events fitting the model into LUND format.  The LUND file can then be used  in GEMC instead of the native beam options.  
+  
+
+\subsection{Molflow+}
+
+Molflow+ is a test-particle Monte Carlo simulation package for ultra-high vacuum systems, developed at CERN.  It allows the user to calculate pressure in an arbitrarily complex geometry.  The name, a portmanteau of "molecular flow", comes from the condition that the mean free path is much greater than the geometric size of the molecule so that molecular collisions can be ignored.
+
+The software permits users to import geometries in CAD format and calculates pressure under ultra-high vacuum conditions. It was developed in C++ and is currently supported for Windows 10.
+
+\subsection{Synrad+}
+
+A modification of the previous program, Synrad+ tracks photons instead of molecules to determine the flux and power distribution on surfaces caused by synchrotron radiation.  The beam trajectory is calculated from user-defined magnetic regions.  From this beam, photons are emitted and their reflectance or absorbance is calculated when they strike surfaces. This information is helpful to the machine design in areas where synchrotron-induced heat or gas desorption matters.  The file formats for SynRad+ are compatible with MolFlow+.
+
