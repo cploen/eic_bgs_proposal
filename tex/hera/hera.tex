@@ -1,15 +1,55 @@
 ******Outline for HERA Summary********
 
 \subsection{intro why we decided to benchmark based on HERA}
-Info about HERA problem, solution, importance of studies at this stage.
-HERA experience 
-hera configuratoin c5 rates images
-reproduction
+
+In order to establish the validity of future IR simulations in GEMC and GEANT4, a benchmarking study was conducted using parameters from the HERA-II upgrade.  Reproducing the background rates from proton/beam-gas interactions by simulating HERA conditions validates the quantitative results from future background studies.
 
 \subsection{issues at hera and lessons learned}
+Following the HERA-II upgrade in 2000/2001, significant levels of beam-induced background were observed and identified: synchrotron radiation, proton gas scattering, lepton gas scattering, and proton-beam halo losses.  The background significantly impacted the detectors and initiated a several month shutdown to perform detailed simulations and remediate the problematic radiative environment.
+
+Understanding and mitigating beam-gas background required dynamic pressure profile simulations, measurements of the vacuum pressure distribution, and residual beam gas analysis.  The results of this analysis indicated that there was a region spanning $\pm$ 5 m around the IP for which the pressure rose to $10^{-7}$ mbar.  This pressure was 100 times higher than surrounding vacuum levels, which were within acceptable limits.  Analysis indicated that hydrogen dominated the beam gas composition. 
+
+insert image[pressure distribution] and image[beam gas comp]
+
 \subsection{hera configuration and rates in C5 detector-- primary images}
+In particular, the C5 scintillator detector located 1240mm upstream of the interaction point, experienced extremely high background rates.  The current in the C5 detector is show in image[c5 rate]. (image[c5 detector])
+
+In order to benchmark simulation tools against HERA background rates, certain parameters were observed or scaled to the study performed.  These are summarized in the table below:
+[insert table of study assumptions/parameters]
+
+\subsection{Approach}
+- modeled two disk scintillator detector in gemc with roughly the same geometry.  Placed at 1240mm upstream (same position as original C5)
+
+- modeled beam pipe with three sections: baseline vacuum "good" vac and "bad vac" 
+
+- positioned particle generator directly in front of bad vac region and fired (beam parameters) towards ip, recorded hits in detector.
+
+- scale hits based on assumptions
+
+- subtract neutral particles that "real" C5 did not see.
 
 \subsection{Results}
-* rate as a function of vacuum level
-* rate as a function of vacuum length
+- compare rate: achieved comparable rate in our simulation
+show: occupancy plot
+
+\subsubsection{vacuum level dependency}
+-varied vacuum level
+
+-rate varied as expected
+
+-plot of dependency
+
+\subsubsection{vacuum length dependency}
+-varied vacuum length
+
+-rate varied as expected
+
+-plot of dependency
+
+\subsubsection{physics models}
+
+\subsubsection{beam energy independency}
+
+
+*validity of simulation
 \subsection{Conclusion}
