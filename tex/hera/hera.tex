@@ -1,13 +1,34 @@
-To establish the validity of future simulations using current software tools, GEMC, Geant4, and the JLEIC event generator were benchmarked against background rates measured at HERA following the luminosity upgrade.  By replicating HERA conditions, simulations produced background rates that were comparable to those recorded in HERA's C5 detector.  Successfully reproducing these rates validates several software tools for background studies and underscores both the need and readiness to conduct JLEIC background studies at this time.
+To establish the validity of future simulations using current software tools, GEMC, Geant4, and the JLEIC initial distribution generator were benchmarked against background rates measured at HERA following the luminosity upgrade.  By replicating HERA conditions, simulations produced background rates that were comparable to those recorded in HERA's C5 detector.  Successfully reproducing these rates validates several software tools for background studies and underscores both the need and readiness to conduct JLEIC background studies at this time.
 
 \subsection{HERA Issues and Lessons}
-%originally "HERA Issues and Lessons"
+
 Following the HERA-II upgrade in 2000 and 2001, high levels of beam-induced background were observed and identified: synchrotron radiation, proton gas scattering, lepton gas scattering, and proton beam halo losses.   In fact, 95\% of background observed following the upgrade came from proton beam-gas interactions where vacuum conditions had deteriorated due to synchrotron radiation.  The background impacted the detectors and necessitated a several month shutdown to perform simulations and remediate the problem.
 
 High levels of synchrotron radiation had been expected after the HERA upgrade, since the luminosity increase was achieved by stronger beam focusing (lower $\beta^*$) and required upgraded focusing magnets, changes to the machine lattice, and a redesigned IR. Unique vacuum chamber geometry, collimators, and masks were installed to handle the expected increase in background.  However, adequately detailed background studies were not conducted ahead of time, and these changes generated significantly more machine-induced background than anticipated.  A several month shutdown was necessary to perform additional simulations and develop mitigation strategies.  Until 2004, HERA-II operations were current-limited due to background.
 
 During the shutdown, the HERA team performed detailed simulations of the dynamic pressure profile and residual beam gas analysis to determine the best mitigation strategies.  Results indicated that vacuum pressure, dominated by hydrogen gas, spiked to $10^{-8}$ mbar in the region spanning $\pm$ 5 m around the IP.   This  was 100 times higher than the nominal pressure of $10^{-10}$ mbar achieved at the location of the vacuum pumps.  Beam particles interacted with the hydrogen gas, producing halo particles which constituted a large portion of the background events reaching the ZEUS detector.  The C5 counter was placed very close to the beam pipe to measure the rate and arrival times of these halo particles.
 %%Insert pictures of vacuum and gas analyses
+
+\begin{figure}
+	\centering
+	\includegraphics[width=.75	\textwidth]{../../img/hera_badvac_regions.jpg}
+	\caption{HERA-II Vacuum pressure distribution around the IP following upgrade.  Minima correspond to placement of the vacuum pumps.}
+	\label{fig:hera1}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=.75\textwidth]{../../img/hera_badvac_comp.jpg}	
+	\caption {HERA-II Composition of beampipe gas 6 m from IP. }
+	\label{fig:hera2}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=.75\textwidth]{../../img/hera_c5_rate.jpg}
+	\caption{C5 rate as a function of HERA \textit{e} beam current for different \textit{p} beam current.  Numeric tags indicate the date and hour of the beginning of \textit{ep} injection for July 2002.}
+	\label{fig:hera3}
+\end{figure}
 
 \subsection{Detector Geometry}
 
@@ -36,7 +57,7 @@ Key parameters were either matched to the HERA case, scaled, or shown to exert l
 		\hline \hline
 		Gate Time & 96 ns & 100 ns \\ 
 		$p$ bunch length & 100 mm & n/a \\ 
-		$I_p$ & 40 mA & 100 mA\\
+		$I_p$ & 100 mA & 100 mA\\
 		$E_p$ (GeV)& 920 & 100, 900 $\pm$ 1 \\
 		$N$/bunch & $10^{11}$ & $10^{11}$\\
 		$N$ Events & n/a & $\approx 10^6$\\
@@ -49,72 +70,6 @@ Key parameters were either matched to the HERA case, scaled, or shown to exert l
 
 
 To replicate the C5 detector, a two-disc scintillator detector was built in GEMC and placed 1240 mm upstream from the IP.  Like the actual C5 detector, the virtual detector was comprised of discs 3 mm thick, separated by 20 mm.  The inner and outer radii also matched the original: $R_{in} = 3.801/2$ cm and $R_{out} = 20.0/2$ cm.  The detector was assigned "flux" sensitivity, so that different tracks record different hits independent of the time window. 
-
-HERA's beampipe from 2002 was replicated by modeling a simple cylindrical beam pipe out of 0.5mm thick aluminum with inner radius 19mm.  It was filled with hydrogen gas of density proportional to  $10^{-8}$ mbar $\pm$5 m around IP and $10^{-10}$ mbar everywhere else.
-
-The internal event generator was positioned directly before the higher pressure region and fired approximately $10^6$ protons toward the IP.  Both 100 and 900 GeV particles were simulated, with a momentum spread of $\pm$ 1 GeV, 0.2 mrad spread in $\phi$ and $2\pi$ rad spread in $\theta$.  All particles hitting the detector, both charged and neutral, were recorded and their information stored in an EVIO file.  Data was analyzed in ROOT after file conversion and making a cut along the $z$ axis in the location of the detector.  The number of neutral particles recorded in the detector was then subtracted from the total, and counts were normalized to exactly $10^6$ events.  This number, along with previously stated assumptions and scale factors, was used to calculate the rate of particles seen in the virtual C5 and compared to HERA-II data.
-
-The basic HERA configuration was simulated: i.e., a 900 GeV proton beam was fired from the center of the beam pipe in front of the higher density gas region and the detector hits were recorded.  Two Geant4 physics models were compared and the results are noted below.  Additionally, simulations were performed to compare the results of lower beam energy, external event generator with JLEIC parameters, varying degraded vacuum region length, varying degraded vacuum region density, and varying beam pipe composition.
-\subsection{Results and Analysis}
-equation for calculation of rate
-
-basic most closely matched to hera result. (900 gev p beam)
-
-- compare rate: achieved comparable rate in our simulation
-
-show: occupancy plot
-
-\subsubsection{physics model dependency}
-\subsubsection{Beam energy dependency}
-
--varied vacuum level
-
--rate varied as expected
-
--plot of dependency
-
-\subsubsection{vacuum length dependency}
--varied vacuum length
-
--rate varied as expected
-
--plot of dependency
-
-\subsection{Conclusion}
-*validity of simulation
-
-Next steps
-
-\begin{figure}
-	\centering
-	\includegraphics[width=.75	\textwidth]{../../img/hera_badvac_regions.jpg}
-	\caption{HERA-II Vacuum pressure distribution around the IP following HERA-II upgrade.  Minima correspond to placement of the vacuum pumps.}
-	\label{fig:hera1}
-\end{figure}
-
-
-\begin{figure}
-	\centering
-	\includegraphics[width=.75\textwidth]{../../img/hera_badvac_comp.jpg}	
-	\caption {HERA-II Composition of beampipe gas 6 m from IP. }
-	\label{fig:hera2}
-\end{figure}
-
-\begin{figure}
-	\centering
-	\includegraphics[width=.75\textwidth]{../../img/hera_c5_rate.jpg}
-	\caption{C5 rate as a function of HERA \textit{e} beam current for different \textit{p} beam current.  Numeric tags indicate the date and hour of the beginning of \textit{ep} injection for July 2002.}
-	\label{fig:hera3}
-\end{figure}
-
-\begin{figure}
-	\centering
-	\includegraphics[width=.75\textwidth]{../../img/c5_placement.jpg}
-	\caption{C5 detector placement along HERA beamline.}
-	\label{fig:hera4}
-\end{figure}
-
-
 \begin{figure}
 	\centering
 	\begin{minipage}{0.45\textwidth}
@@ -129,6 +84,68 @@ Next steps
 		\label{fig:hera6}
 	\end{minipage}
 \end{figure}
+
+HERA's beampipe from 2002 was replicated by modeling a simple cylindrical beam pipe out of 0.5mm thick aluminum with inner radius 19mm.  It was filled with hydrogen gas of density proportional to  $10^{-8}$ mbar $\pm$5 m around IP and $10^{-10}$ mbar everywhere else.
+
+GEMC's native beam distribution generator was initialized directly before the higher pressure region and fired approximately $10^6$ protons toward the IP.  Both 100 and 900 GeV particles were simulated, with a momentum spread of $\pm$ 1 GeV, 0.2 mrad spread in $\phi$ and $2\pi$ rad spread in $\theta$.  All particles hitting the detector, both charged and neutral, were recorded and their information stored in an EVIO file.  Data was analyzed in ROOT after file conversion and making a cut along the $z$ axis in the location of the detector.  The number of neutral particles recorded in the detector was then subtracted from the total, and counts were normalized to exactly $10^6$ events.  This number, along with previously stated assumptions and scale factors, was used to calculate the rate of particles seen in the virtual C5 and compared to HERA-II data.
+
+The basic HERA configuration was simulated: i.e., a 900 GeV proton beam was fired from the center of the beam pipe in front of the higher density gas region and the detector hits were recorded.  Two Geant4 physics models were compared and the results are noted below.  Additionally, simulations were performed to compare the results of lower beam energy, external beam distribution generator with JLEIC parameters, varying degraded vacuum region length, varying degraded vacuum region density, and varying beam pipe composition.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=.75\textwidth]{../../img/c5_placement.jpg}
+	\caption{C5 detector placement along HERA beamline.}
+	\label{fig:hera4}
+\end{figure}
+
+\subsection{Results and Analysis}
+The rate of particles in the virtual C5 detector was calculated by $I = qE\cdot N/t$.  With HERA parameters, the virtual C5 detector measured approximately 33kHz for charged particle events, which compares favorably to HERA data.  
+
+Furthermore, additional simulations verified the relationship between vacuum density and length of degraded vacuum region.  Increasing the density of the hydrogen gas produced higher event rates, as expected.  Similarly, increasing the length of the degraded vacuum region produced higher event rates than the baseline HERA configuration.  The results of these comparisons are reproduced in Figure \ref{fig:hera5} and \ref{fig:hera6}, with the HERA configuration highlighted.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=.75\textwidth]{../../img/density_dep_lin_crop.jpg}
+	\caption {C5 rate as a function of vacuum density, with an arbitrary linear fit.}
+	\label{fig:hera5}
+\end{figure}	
+		
+\begin{figure}
+	\centering	\includegraphics[width=.75\textwidth]{../../img/length_dep_poly_crop.jpg}	
+	\caption {C5 rate as a function of degraded vacuum region length, with an arbitrary polynomial fit.}
+	\label{fig:hera6}
+\end{figure}
+
+
+
+Simulations  performed to compare beam energy at 100 GeV and 900 GeV did not produce noteworthy differences in background rates.  Additional studies comparing the GEANT4 physics models found event rates to be approximately 25\% higher using the FRITIOF precompound model (FTFP) versus the Quark-Gluon String Precompound model (QGSP).  Beam pipe composition was also compared, and aluminum beam pipes were found to produce 25\% more background than a beryllium/aluminum mix.
+
+
+%show: occupancy plot?
+
+
+\subsection{Conclusion}
+The benchmarking study has confirmed that using HERA parameters, the GEMC software produces data in agreement with the experimental results from HERA.  Additionally, the initial distribution generator, which accurately models JLEIC beam parameters, indicates similarly high levels of proton beam-gas background for HERA vacuum conditions.  This validates future results produced with these tools and reinforces both the need and readiness to undertake further studies of the beam gas interactions generated in the EIC.  
+
+To build upon these studies, it is necessary to implement the IR beam pipe design in GEMC and CAD in order to 
+
+\begin{itemize}
+	\item Determine the influence of EIC IR geometry on proton beam-gas background using EIC initial  bunch distributions.
+	\item Validate the assertion that $10^{-9}$ mbar vacuum pressure provides tolerable vacuum conditions and begin to develop possible pumping schemes.
+	\item Validate the synchrotron radiation event generator in GEANT4/GEMC.
+	\item Determine figure-of-merit for synchrotron radiation due to electron beam-gas interactions.
+	\item Evaluate the effectiveness of a small chicane along the upstream electron beamline for minimizing the beamline synchrotron radiation contribution.
+\end{itemize}
+
+Such measures are within the scope of this proposal.
+
+
+
+
+
+
+
+
 
 
 

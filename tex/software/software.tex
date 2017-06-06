@@ -19,5 +19,14 @@ The software permits users to import geometries in CAD format and calculates pre
 A modification of the previous program, Synrad+ tracks photons instead of molecules to determine the flux and power distribution on surfaces caused by synchrotron radiation.  The beam trajectory is calculated from user-defined magnetic regions.  From this beam, photons are emitted and their reflectance or absorbance is calculated when they strike surfaces. This information is helpful to the machine design in areas where synchrotron-induced heat or gas desorption matters.  The file formats for SynRad+ are compatible with MolFlow+.
 
 \subsection{MAD-X}
+MAD-X, or \underline{M}ethodical \underline{A}ccelerator \underline{D}esign, facilitates the design and testing of accelerators and beam behavior.  Written in FORTRAN and C, the software can calculate the optics parameters from a machine description, match desired properties, and simulate and correct possible machine flaws.  The evolution of the beam can then be simulated in the machine.  MAD-X writes output to a separate file but supports a grapical user interface as well.  Developed at CERN, the MAD language is the de facto standard for accelerator description, beam simulation, and beam optics optimization.
+
+%http://madx.web.cern.ch/madx/
+%http://madx.web.cern.ch/madx/doc/madx_primer.pdf
+%http://folk.uio.no/erikadl/FYS4550/exercises/computer/MADX_Introduction.pdf
 
 \subsection{Elegant}
+%http://www.aps.anl.gov/Accelerator_Systems_Division/Accelerator_Operations_Physics/manuals/elegant_latest/elegant.html
+%http://www.aps.anl.gov/Accelerator_Systems_Division/Accelerator_Operations_Physics/elegant.html
+
+Elegant performs 6-D tracking with matrices or canonical integrators, supports time-dependent elements, and computes beta functions, matrices, orbits, amplification factors, and more.  Written in C, it uses a variant of the MAD input format for accelerator description.  Not a stand-alone program, Elegant requires the use of other programs collectively known as the SDDS Toolkit, to provide data analysis and display capabilities.  Among its many capabilities are particle tracking, accelerator optimization, the addition of random errors to accelerator element parameters, and calculation of higher-order modes (HOM), wake-fields, and impedances.
