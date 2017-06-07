@@ -22,5 +22,5 @@
 *.out
 *.synctex.gz
 *.pdf
-
+*.DS_Store
 tex/document/document_outline/*
