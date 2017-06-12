@@ -1,11 +1,11 @@
 \subsection{GEMC}
 
-GEMC, short for Geant4 Monte Carlo, is the simulation software used by both CLAS12 and EIC to study how particles interact with matter.  It is capable of tracking particles through any material and recording interactions and detector response at every step.  Built in C++, the software permits users to build the elements of the experiment using either perl scripts or importing designs directly from CAD.  GEMC permits users to model a particle beam with great specificity.  One can specify the point of origin, particle species, momentum, and direction.  Additional options permit a spatial spread in $\theta$ and $\phi$ values, Gaussian beam profile, and bunch spacing. 
+GEMC, short for Geant4 Monte Carlo, is the simulation software used by not only CLAS12, SOLID, HPS, Moller but also JLEIC to study how particles interact with matter.  It is capable of tracking particles through any material and recording interactions and detector response at every step.  Built in C$^{++}$, the software permits users to build the elements of the experiment using either perl scripts or importing designs directly from CAD.  GEMC permits users to model a particle beam with great specificity.  One can specify the point of origin, particle species, momentum, and direction.  Additional options permit a spatial spread in $\theta$ and $\phi$ values, Gaussian beam profile, and bunch spacing. 
 
 Alternatively, users may import generated events for simulation using the LUND format.  Simulation data is recorded in EVIO format, short for Event Input/Output.  It is then written to a separate file which can be converted to ROOT for data analysis using a program called Evio2Root.
 
-\subsection{Initial Distribution Generator}
-Based off nominal beam dynamics from the accelerator division, a script was written using ROOT that accurately models these parameters.  Specifically, it generates an optically matched transverse bunch distribution and writes the data for these particles into a LUND file.  The file is then called in GEMC rather than the native beam options.  
+\subsection{Initial Beam Distribution Generator}
+Based off nominal beam dynamics from the accelerator division, a C$^{++}$ script was written using ROOT that accurately models beam profile.  Specifically, it generates an optically matched transverse bunch distribution and writes the data for these particles into a LUND formatted ASCII file.  The file is then called in GEMC rather than the native beam options.  
   
 
 \subsection{Molflow+}
