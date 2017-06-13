@@ -5,11 +5,10 @@
 \usepackage{graphicx}
 \usepackage{enumitem}
 \usepackage{multirow}
-\usepackage{natbib}
-\usepackage{notoccite}
 %\usepackage{gensymb}
 \newcommand\litem[1]{\item{}}
 
+\usepackage{filecontents}
 
 %add abstract from Latifa
 %use [!htb] for figure placement
@@ -33,7 +32,8 @@
 \affil[1]{Thomas Jefferson National Accelerator Facility}
 \affil[2]{Old Dominion University}
 \affil[3]{University of Connecticut}
-\affil[4]{SLAC}
+\affil[4]{SLAC National Accelerator Laboratory}
+
 
 \begin{document}
 \date{June 16, 2017}
@@ -53,8 +53,6 @@
 \input{../introduction/introduction.tex}
 \section{Background Sources}
 \input{../bgsources/bgsources.tex}
-\section{Software Tools}
-\input{../software/software.tex}
 
 \section{This proposal}
 
@@ -68,10 +66,13 @@
 \input{../approach/workflow.tex}
 \subsubsection{Synchrotron Vacuum}
 \input{../approach/syn_vac.tex}
+
 \subsubsection{Optimization}
 %\input{optimization.tex}
-\subsubsection{Validation with HERA}
-*not necessarily its own section.
+{\textbf{I don't know what we we want to say before sophiscated simulation...}}
+%\subsubsection{Validation with HERA}
+%*not necessarily its own section.
+
 %input{../approach/validation.tex}
 \subsection{Collaborative Efforts}
 \input{../approach/team.tex}
@@ -80,16 +81,17 @@
 \section{Budget}
 %\section{Summary}
 
-\section{References}
-\bibliography{../../bib/bib}
+%\section{References}
+\bibliography{../../bib/bib}{}
 \bibliographystyle{plain}
 
-%\input{../bibtest/bibtest.tex}
-
+\newpage 
 \appendix
 \section{Software Benchmarking by HERA Experience}
 \input{../hera/hera.tex}
 
+\section{Software Tools}
+\input{../software/software.tex}
 
 \end{document}
 
